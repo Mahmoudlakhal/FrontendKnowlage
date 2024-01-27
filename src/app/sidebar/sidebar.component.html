@@ -1,0 +1,63 @@
+<div id="app">
+  <div id="sidebar" class="active">
+    <div class="sidebar-wrapper active">
+      <div class="sidebar-header">
+        <div class="d-flex justify-content-between">
+          <div class="logo">
+            <a href="home.html">
+              <img src="assets/images/logo/esprit-logo.jpg" alt="Logo" style="width: 200px; height: 130px;">
+            </a>
+
+          </div>
+          <div class="toggler">
+            <a class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="sidebar-menu">
+        <ul class="menu">
+          <li class="sidebar-title">Menu</li>
+
+          <li class="sidebar-item active ">
+            <a routerLink="home" class='sidebar-link'>
+              <i class="bi bi-grid-fill"></i>
+              <span>Dashboard</span>
+            </a>
+          </li>
+
+          <li class="sidebar-item  has-sub">
+            <a class='sidebar-link'>
+              <i class="bi bi-stack"></i>
+              <span>Components</span>
+            </a>
+            <ul class="submenu " style="display: block;" >
+
+              <li class="submenu-item">
+                <a routerLink="/dashboard">Tous Les cours
+                </a>
+              </li>
+
+              <li class="submenu-item " >
+                <a class="nav-link" routerLink="/addCours"> Cours </a>
+              </li>
+
+              <li class="submenu-item">
+                <a routerLink="/dashuser">Tous Les Utilisateurs
+                </a>
+
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <li class="sidebar-item active ">
+        <a  class='sidebar-link' >
+          <i class="bi bi-grid-fill"></i>
+          <span class="nav-link" routerLink="/login" >Log Out</span>
+        </a>
+      </li>
+
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

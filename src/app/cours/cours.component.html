@@ -1,0 +1,66 @@
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="signup-container">
+  <form (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+
+
+    <div class="form-group">
+      <label for="title">Titre</label>
+      <input type="text" class="form-control" id="title" [(ngModel)]="title" name="title" required ngModel #t="ngModel">
+      <div class="alert alert-danger" *ngIf="t.invalid && t.touched">remplire le champ est obligatoire</div>
+    </div>
+
+
+    <div class="form-group">
+      <label for="subject">Sujet</label>
+      <input type="text" class="form-control" id="subject" [(ngModel)]="subject" name="subject" required ngModel #s="ngModel">
+      <div class="alert alert-danger" *ngIf="s.invalid && s.touched">remplire le champ est obligatoire</div>
+    </div>
+
+
+    <div class="form-group">
+      <label for="content">Contenu</label>
+      <textarea class="form-control" id="content" [(ngModel)]="content" name="content" required ngModel #c="ngModel"></textarea>
+      <div class="alert alert-danger" *ngIf="c.invalid && c.touched">remplire le champ est obligatoire</div>
+    </div>
+
+
+    <div class="form-group">
+      <label for="prix">Prix</label>
+      <select class="form-control" id="prix" [(ngModel)]="prix" name="prix" required required ngModel #p="ngModel">
+        <option value="Payant">Payant</option>
+        <option value="Gratuit">Gratuit</option>
+      </select>
+      <div class="alert alert-danger" *ngIf="p.invalid && p.touched">remplire le champ est obligatoire</div>
+    </div>
+
+    <div class="form-group">
+      <label for="categorie">Catégorie</label>
+      <select class="form-control" id="categorie" [(ngModel)]="categorie" name="categorie" required required ngModel #cat="ngModel">
+        <option value="développement_Web">développement_Web</option>
+        <option value="Machin_Learning">Machin_Learning</option>
+        <option value="Lunix">Lunix</option>
+        <option value="Devops">Devops</option>
+      </select>
+      <div class="alert alert-danger" *ngIf="cat.invalid && cat.touched">remplire le champ est obligatoire</div>
+    </div>
+
+    <div class="form-group">
+      <label for="video">Vidéo</label>
+      <input type="file" class="form-control" id="video" (change)="onVideoFileChange($event)" name="video" required ngModel #v="ngModel">
+      <div class="alert alert-danger" *ngIf="v.invalid && v.touched">Choisir un video</div>
+
+    </div>
+    <div class="form-group">
+      <label for="image">Image</label>
+      <input type="file" class="form-control" id="image" (change)="onImageFileChange($event)" name="image" required ngModel #i="ngModel">
+      <div class="alert alert-danger" *ngIf="i.invalid && i.touched">Choisir une Image</div>
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary">Ajouter</button>
+  </form>
+     </div>
+    </div>
+  </div>
+</div>

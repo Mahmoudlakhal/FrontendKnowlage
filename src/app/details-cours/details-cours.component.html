@@ -1,0 +1,19 @@
+<div class="container">
+  <h2>Détails du Cours</h2>
+  <div *ngIf="cours">
+    <div class="card">
+
+      <div class="card-body">
+        <h5 class="card-title">{{ cours.title }}</h5>
+        <p class="card-text"><strong>Catégorie:</strong> {{ cours.categorie }}</p>
+        <p class="card-text"><strong>Contenu:</strong></p>
+        <div [innerHTML]="cours.content"></div>
+        <p class="card-text"><strong>Prix:</strong> {{ cours.prix }}</p>
+        <video controls>
+          <source [src]="videoUrl" type="video/mp4">
+          Votre navigateur ne supporte pas la lecture de vidéos.
+        </video>
+      </div>
+    </div>
+  </div>
+</div>

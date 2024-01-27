@@ -1,0 +1,60 @@
+<!-- signup-component.html -->
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="signup-container">
+        <h2 class="mb-4">Sign Up</h2>
+
+        <!div style="flex: 1; text-align: center;">
+          <!img src="assets/images/logo/web-dev.png" alt="Logo" class="logo-image" width="250" height="200">
+        <!/div>
+
+        <form (submit)="onSubmit()">
+
+          <div class="form-group">
+            <label for="userfname">First Name</label>
+            <input type="text" id="userfname" name="userfname" [(ngModel)]="newUser.firstName" class="form-control" required ngModel #l="ngModel">
+            <div class="alert alert-danger" *ngIf="l.invalid && l.touched">Le prénom est obligatoire</div>
+          </div>
+
+          <div class="form-group">
+            <label for="userlname">Last Name</label>
+            <input type="text" id="userlname" name="userlname" [(ngModel)]="newUser.lastName" class="form-control" required ngModel #h="ngModel">
+            <div class="alert alert-danger" *ngIf="h.invalid && h.touched">Le nom est obligatoire</div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" [(ngModel)]="newUser.email" class="form-control" required ngModel #e="ngModel" pattern="[a-zA-Z0-9.]+@[a-zA-Z0-9]+.[a-zA-Z0-9]{2,4}">
+            <div class="alert alert-danger" *ngIf="e.invalid && e.touched">
+              <div *ngIf="e.errors?.['required']">Email is required</div>
+              <div *ngIf="e.errors?.['pattern']">Invalid email format</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" [(ngModel)]="newUser.password" required class="form-control" ngModel #p="ngModel">
+            <div class="alert alert-danger" *ngIf="p.invalid && p.touched">Password incorrecte</div>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" [(ngModel)]="newUser.phoneNumber" class="form-control" required ngModel #t="ngModel">
+            <div class="alert alert-danger" *ngIf="t.invalid && t.touched">Numéro de téléphone est obligatoire</div>
+          </div>
+
+          <div class="form-group">
+            <label for="addresse">Adresse</label>
+            <input type="text" id="addresse" name="adresse" [(ngModel)]="newUser.adresse" class="form-control" required ngModel #a="ngModel">
+            <div class="alert alert-danger" *ngIf="a.invalid && a.touched">Adresse est obligatoire</div>
+          </div>
+          <br>
+          <div>
+            <button type="submit" class="btn btn-primary">Sign Up</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

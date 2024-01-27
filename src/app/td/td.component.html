@@ -1,0 +1,33 @@
+<!-- td.component.html -->
+<div>
+  <h2>Ajouter un TD</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div>
+      <label for="imageFile">Image</label>
+      <input type="file" id="imageFile" accept=".jpg, .png" [(ngModel)]="td.imageFile" name="imageFile" required />
+    </div>
+    <div>
+      <label for="titre">Titre</label>
+      <input type="text" id="titre" [(ngModel)]="td.titre" name="titre" required />
+    </div>
+    <div>
+      <label for="sujet">Sujet</label>
+      <input type="text" id="sujet" [(ngModel)]="td.sujet" name="sujet" required />
+    </div>
+    <div>
+      <label for="description">Description</label>
+      <textarea id="description" [(ngModel)]="td.description" name="description" required></textarea>
+    </div>
+    <div>
+      <label for="categorie">Catégorie</label>
+      <input type="text" id="categorie" [(ngModel)]="td.categorie" name="categorie" required />
+    </div>
+    <div>
+      <label for="prix">Prix</label>
+      <input type="text" id="prix" [(ngModel)]="td.prix" name="prix" required />
+    </div>
+    <div>
+      <button type="submit">Ajouter</button>
+    </div>
+  </form>
+</div>

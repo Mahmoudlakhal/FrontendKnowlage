@@ -1,0 +1,35 @@
+<!-- dashboard-cours.component.html -->
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card mx-auto">
+        <div class="card-header">
+          <h2 class="text-center">Tableau de Cours</h2>
+        </div>
+        <div class="card-body">
+          <table class="table table-bordered">
+            <thead>
+            <tr>
+
+              <th scope="col" style="width: 70%;">Titre</th>
+              <th scope="col">Sujet</th>
+              <th scope="col">Option</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let cours of coursList">
+
+              <td>{{ cours.title }}</td>
+              <td>{{ cours.subject }}</td>
+              <td>
+                <button class="btn btn-danger" (click)="deleteCours(cours.id)">Supprimer</button>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

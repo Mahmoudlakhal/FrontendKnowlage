@@ -1,0 +1,47 @@
+<div class="container">
+  <h1>Liste des Cours</h1>
+  <div class="row">
+
+  <div class="col-md-2">
+    <label for="categorieSelect"><b>Catégorie:</b></label>
+    <select class="form-control" id="categorieSelect" [(ngModel)]="selectedCategorie" (change)="applyFilters()" style="opacity: 0.6;">
+      <option value="">Tous</option>
+      <option value="développement_Web">développement_Web</option>
+      <option value="Machin_Learning">Machin_Learning</option>
+      <option value="Lunix">Linux</option>
+      <option value="Devops">DevOps</option>
+      <!-- Ajoutez d'autres options pour les catégories selon vos besoins -->
+    </select>
+  </div>
+  <div class="col-md-2">
+    <label for="prixSelect" ><b>Prix:</b></label>
+    <select class="form-control" id="prixSelect" [(ngModel)]="selectedPrix" (change)="applyFilters()" style="opacity: 0.6;">
+      <option value="" >Tous</option>
+      <option value="Payant">Payant</option>
+      <option value="Gratuit">Gratuit</option>
+    </select>
+  </div>
+    </div>
+  <br>
+  <br>
+  <div class="row">
+    <div class="col-md-3" *ngFor="let cours of listCours">
+      <!-- Contenu du cours ici -->
+      <div class="card" style="min-height: 50px;">
+        <img [src]="getCoursImageURL(cours.id)" class="card-img-top" alt="Image du cours" style="width: 100%; height: 250px;">
+        <div class="card-body">
+
+          <h2 class="card-title">
+            <a [routerLink]="['/cours', cours.id]">{{ cours.title }}</a>
+          </h2>
+
+          <p class="card-text">{{ cours.subject }}</p>
+          <p class="card-text">{{ cours.prix }}</p>
+          <p class="card-text">{{ cours.categorie }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <mat-paginator [length]="listCours.length" [pageSize]="12" [pageSizeOptions]="[12, 24, 48]"></mat-paginator>
+</div>

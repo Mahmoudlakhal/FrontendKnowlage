@@ -1,0 +1,37 @@
+<!-- login.component.html -->
+<div class="container">
+
+  <!-- Ajouter une classe pour le centrage vertical -->
+  <div class="row justify-content-center align-items-center min-vh-100">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="text-center">Login</h2>
+        </div>
+        <div class="card-body">
+          <form (ngSubmit)="login()">
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" [(ngModel)]="loginForm.email" required class="form-control">
+            </div>
+
+            <div class="form-group">
+              <label for="password">Password:</label>
+              <input type="password" id="password" name="password" [(ngModel)]="loginForm.password" required class="form-control">
+            </div>
+
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary">Login</button>
+            </div>
+          </form>
+
+          <!-- Ajouter le lien vers la page d'inscription -->
+          <div class="text-center mt-3">
+            <p>Vous n'avez pas de compte? <a href="/signe-up">Créer un compte</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>
